@@ -1,28 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Language Science</title>
-  
-  <!-- Meta tags -->
-  <meta name="description" content="Language Science">
-  <meta property="og:title" content="Language Science"/>
-  <meta property="og:description" content="Language Science"/>
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- External CSS -->
+  <title>Language, Thought</title>
+
+  <meta name="description" content="Exploring language and thought.">
+  <meta property="og:title" content="Language, Thought"/>
+  <meta property="og:description" content="Exploring language and thought."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-  
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']], // Delimiters for inline math
+        displayMath: [['\\[', '\\]']], // Delimiters for display math
+        macros: {
+          // General Math Macros from LaTeX preamble
+          RR: '\\mathbb{R}',
+          NN: '\\mathbb{N}',
+          CC: '\\mathbb{C}',
+          ZZ: '\\mathbb{Z}',
+          id: '\\mathrm{id}',
+          comp: '\\circ',
+          // Probability and Measure Theory Macros
+          Prob: '\\mathcal{P}',
+          MeasSpace: ['{(#1, \\mathscr{B}(#1))}', 1],
+          SigmaAlg: ['{\\mathscr{B}(#1)}', 1],
+          Borel: ['{\\mathscr{B}(#1)}', 1], // Alias
+          Expect: '\\mathbb{E}',
+          ProbSpace: ['{(\\Omega, \\mathcal{F}, \\mathbb{P})}', 0], // Use as example if needed
+          Ind: '\\mathbf{1}',
+          defeq: '\\triangleq',
+          eqdef: '\\eqqcolon',
+          dd: '\\mathrm{d}',
+          deltaDirac: ['{\\delta_{#1}}', 1],
+          powerset: ['{\\mathcal{P}(#1)}', 1],
+          // Category Theory Macros
+          cat: ['{\\mathbf{#1}}', 1],
+          Stoch: '\\cat{Stoch}',
+          FinStoch: '\\cat{FinStoch}',
+          Meas: '\\cat{Meas}',
+          MC: '\\mathcal{C}',
+          Hom: '\\mathrm{Hom}',
+          tens: '\\otimes',
+          unit: 'I',
+          swap: '\\sigma',
+          copyop: '\\Delta',
+          delop: '!',
+          // Information Theory & Divergence Macros
+          Div: 'D',
+          KLDiv: 'D_{\\mathrm{KL}}',
+          TVDist: 'd_{\\mathrm{TV}}',
+          RenyiDiv: ['{D_{#1}}', 1],
+          FD: 'D_f',
+          Info: 'I',
+          CategoricalEntropy: '\\mathcal{H}',
+          CategoricalCondEntropy: '\\mathcal{H}', // Alias
+          CategoricalRelEntropy: 'D', // Alias
+          ShannonEntropy: 'H',
+          ShannonCondEntropy: 'H', // Alias
+          // Language Model Macros (used in the HTML body)
+          VV: '\\mathcal{V}',
+          VocabSpaceMeas: ['{(\\VV, \\powerset{\\VV})}', 0],
+          SeqSpace: ['{\\VV^*}', 0],
+          SeqSpaceMeas: ['{(\\SeqSpace, \\SigmaAlg{\\SeqSpace})}', 0],
+          ContextSeqSpace: ['{\\VV^*}', 0], // Alias
+          ContextSeqSpaceMeas: '\\SeqSpaceMeas', // Alias
+          RepSpace: '\\mathcal{H}',
+          RepSpaceMeas: ['{(\\RepSpace, \\SigmaAlg{\\RepSpace})}', 0],
+          ContextRepSpace: '\\mathcal{H}_{\\mathrm{seq\\_emb}}',
+          ContextRepSpaceMeas: ['{(\\ContextRepSpace, \\SigmaAlg{\\ContextRepSpace})}', 0],
+          Emb: '\\mathcal{E}',
+          // RoPE: 'f_{\\mathrm{RoPE}}', // Not used directly in body equations
+          EmbLayer: 'f_{\\mathrm{emb}}',
+          Backbone: 'f_{\\mathrm{bb}}',
+          LMHead: 'f_{\\mathrm{head}}',
+          Params: '\\theta',
+          KernelEmb: 'k_{\\mathrm{emb}}',
+          KernelBB: 'k_{\\mathrm{bb}}',
+          KernelLMHead: 'k_{\\mathrm{head}}',
+          KernelGen: 'k_{\\mathrm{gen}}',
+          // Operators
+          argmin: '\\mathop{\\mathrm{arg\\,min}}',
+          argmax: '\\mathop{\\mathrm{arg\\,max}}',
+          Tr: '\\mathrm{Tr}',
+          softmax: '\\mathrm{softmax}'
+          // Note: Ensure all macros used in the HTML math are defined here.
+          // If \mathscr{} font is needed, ensure MathJax font pack supports it or use \mathcal{}.
+        }
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
   <style>
     :root {
       --ucla-blue: #2774AE;      /* UCLA Blue */
       --ucla-gold: #FFD100;      /* UCLA Gold */
-      --light-bg: #F7FAFC;
+      --light-bg: #F8F9FA;       /* Slightly softer light background */
+      --text-light: #FFFFFF;
+      --text-dark: #363636;       /* Default Bulma dark text */
+      --shadow-color: rgba(0, 0, 0, 0.2);
+      --section-bg-light: #ffffff; /* White background for content sections */
     }
-    
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Space Grotesk', sans-serif;
       overflow-x: hidden;
@@ -30,55 +125,369 @@
       flex-direction: column;
       min-height: 100vh;
       background-color: var(--light-bg);
+      color: var(--text-dark);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    
+
     .hero {
       background: var(--ucla-blue);
-      flex-grow: 1;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 5rem 1.5rem; /* Adjusted padding */
     }
-    
+
     .title {
       font-weight: 700;
-      letter-spacing: -1px;
-      color: white;
+      letter-spacing: -1.5px;
+      color: var(--text-light);
       font-size: 3.5rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      text-shadow: 1px 1px 3px var(--shadow-color);
+      margin-bottom: 2.5rem;
     }
-    
+    .title.is-3 { /* Section titles */
+        color: var(--ucla-blue);
+        text-shadow: none;
+        margin-bottom: 2rem;
+    }
+     .subtitle.is-4 { /* Section subtitles */
+        color: var(--ucla-blue);
+        opacity: 0.85;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+      }
+
+    .sonnet {
+      color: var(--text-light);
+      max-width: 960px;
+      margin: 0 auto 2.5rem auto;
+      line-height: 1.9;
+      background: rgba(0, 0, 0, 0.15);
+      padding: 2.5rem;
+      border-radius: 10px;
+      border-left: 4px solid var(--ucla-gold);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      column-count: 2;
+      column-gap: 4.5rem;
+    }
+
+    .sonnet p {
+      margin-bottom: 1.75em;
+      break-inside: avoid-column;
+    }
+
+    .sonnet p:last-child {
+        margin-bottom: 0;
+    }
+
+    .sonnet-attribution {
+      text-align: right;
+      font-style: normal;
+      color: var(--ucla-gold);
+      font-weight: 500;
+      margin-top: 1.5em;
+    }
+
+    .mission {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-top: 2rem;
+      max-width: 800px; /* Slightly wider max-width */
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      opacity: 0.95; /* Slightly more prominent */
+    }
+
+    /* Styling for content sections */
+    .section.content-section {
+      background-color: var(--section-bg-light); /* White background for contrast */
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid #e0e0e0; /* Subtle separator */
+    }
+
+    .content-section .content {
+       max-width: 800px; /* Constrain text width for readability */
+       margin: 0 auto; /* Center the content block */
+       color: var(--text-dark);
+     }
+     .content-section .content p {
+       line-height: 1.7;
+       margin-bottom: 1.5rem; /* Bulma's default is usually 1rem */
+     }
+     .content-section .content ul {
+       margin-left: 2em;
+       margin-bottom: 1.5rem;
+     }
+     .content-section .content li {
+       margin-bottom: 0.75em;
+     }
+     /* Add some space below display math */
+     .content-section .content mjx-container[display="true"] {
+         display: block; /* Ensure it takes full width */
+         margin-top: 1rem;
+         margin-bottom: 1.75rem; /* Consistent paragraph spacing */
+         overflow-x: auto; /* Allow scrolling for very wide equations */
+         overflow-y: hidden;
+     }
+     .content-section .content mjx-container[display="true"] svg {
+        max-width: 100%; /* Prevent SVG overflow */
+     }
+
     .footer {
       background: var(--ucla-blue);
-      color: white;
-      padding: 1rem 0;
+      color: var(--text-light);
+      padding: 1.5rem 1rem;
       border-top: 3px solid var(--ucla-gold);
+      flex-shrink: 0;
+      margin-top: auto; /* Push footer to bottom */
     }
-    
-    @media (max-width: 768px) {
+
+    /* === RESPONSIVE ADJUSTMENTS === */
+    @media (max-width: 992px) { /* Tablet breakpoint */
       .title {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
+      }
+      .hero {
+          padding: 4rem 1rem; /* Adjusted padding */
+      }
+      .sonnet {
+        padding: 2rem;
+        max-width: 600px;
+        column-count: 1;
+        column-gap: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2rem;
+      }
+      .mission {
+          max-width: 90%;
       }
     }
+
+    @media (max-width: 768px) { /* Phone breakpoint */
+          .sonnet {
+              max-width: 95%;
+          }
+          .mission {
+            font-size: 1.1rem;
+          }
+          .section.content-section {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+          }
+          .content-section .title.is-3 {
+            font-size: 1.75rem; /* Adjust title size */
+          }
+          .content-section .subtitle.is-4 {
+            font-size: 1.1rem;
+          }
+          .content-section .content {
+            max-width: 95%;
+          }
+    }
+
   </style>
 </head>
 <body>
-  <!-- Hero Section with Message -->
   <section class="hero">
     <div class="hero-body">
       <div class="container has-text-centered">
-        <h1 class="title">Language Science</h1>
+
+        <h1 class="title">Language and Thought</h1>
+
+        <div class="sonnet">
+          <p>The tongue gives voice, the mind begins to shape,</p>
+          <p>What unseen bridge connects these realms so near?</p>
+          <p>From inner spark to uttered verbal scape,</p>
+          <p>Through patterns spun before the words appear.</p>
+
+          <p>We strive to know how concepts first ignite</p>
+          <p>And find their form in language's design;</p>
+          <p>What hidden structures grant a thought its might?</p>
+          <p>What grammar deep does human sense define?</p>
+
+          <p>This subtle dance lets understanding bloom,</p>
+          <p>As mind constructs the world it comes to hold.</p>
+          <p>Through chosen words we banish mental gloom,</p>
+          <p>Or weave the very narratives we're told.</p>
+
+          <p>This mystery invites the keen pursuit:</p>
+          <p>To map the space where word and reason root.</p>
+
+          <p class="sonnet-attribution">- Yifan Zhang, Tsinghua University </p>
+        </div>
+
+        <div class="mission">
+          Our research investigates the fundamental principles governing the relationship between language and thought.
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <section class="section content-section" id="lambek">
+    <div class="container">
+        <h2 class="title is-3 has-text-centered">Foundation: Categorical Grammars</h2>
+        <div class="content">
+            <p>
+                A significant approach within formal semantics utilizes frameworks derived from category theory. Joachim Lambek's Categorical grammars, particularly the <strong>Lambek Calculus (LC)</strong>, provide a mathematically precise way to model the syntax-semantics interface by assigning algebraic types to words and defining rules for their composition.
+            </p>
+            <p>
+                In LC, syntactic categories (types) start from basic types like \( n \) (noun) and \( s \) (sentence). Complex types are built using binary connectives: \( A / B \) (expects \( B \) to the right to form \( A \)) and \( B \backslash A \) (expects \( B \) to the left to form \( A \)). Grammaticality corresponds to provability in a sequent calculus using rules like Forward Application (\(/E\)) and Backward Application (\(\backslash E\)). For example, "John walks" (\( n, n \backslash s \)) reduces to \( s \):
+                \[
+                    \frac{ n \vdash n \quad s \vdash s }{ n, n \backslash s \vdash s } (\backslash E)
+                \]
+            </p>
+            <p>
+                This type-driven compositionality provides a rigorous foundation. Our work extends these ideas using the broader framework of Markov Categories to analyze probabilistic models like modern language models.
+            </p>
+        </div>
+    </div>
+  </section>
+
+  <section class="section content-section" id="mc-framework">
+    <div class="container">
+        <h2 class="title is-3 has-text-centered">A Markov Categorical Framework for Language Modeling</h2>
+        <h3 class="subtitle is-4 has-text-centered">Modeling AR Generation as Composed Kernels</h3>
+        <div class="content">
+            <p>
+                We propose analyzing the core auto-regressive (AR) generation step, mapping a context sequence \(\mathbf{w}_{<'t'} \) to a next-token probability distribution \( P_\Params(\cdot | \mathbf{w}_{<'t'}) \), using the theory of <strong>Markov Categories (MCs)</strong>. Specifically, we use the category \( \cat{Stoch} \), whose objects are standard Borel spaces (like finite sets \( \VV \), Euclidean spaces \( \RR^d \), sequence spaces \( \VV^* \)) and whose morphisms are <strong>Markov kernels</strong> \( k: X \to Y \), representing conditional probability maps.
+            </p>
+            <p>
+                A Markov kernel \( k: X \times \SigmaAlg{Y} \to [0, 1] \) maps an input \( x \in X \) to a probability measure \( k(x, \cdot) \) on \( Y \). Composition \( h \comp k \) follows the Chapman-Kolmogorov equation: \( (h \comp k)(x, C) = \int_Y h(y, C) \, k(x, \dd y) \).
+            </p>
+            <p>
+                The AR generation process is modeled as a composition of kernels in \( \cat{Stoch} \):
+               \[
+                 k_{\mathrm{gen}, \theta} = \KernelLMHead \comp \KernelBB \comp \KernelEmb : \ContextSeqSpaceMeas \to \VocabSpaceMeas
+               \]
+                Where:
+                <ul>
+                    <li>\( \KernelEmb: \ContextSeqSpaceMeas \to \ContextRepSpaceMeas \) is the (deterministic) Embedding Layer kernel, mapping the token sequence \( \mathbf{w}_{<'t'} \in \VV^* \) to an initial representation sequence \( E_{<'t'} \), possibly including positional encodings. \( (\KernelEmb)_{\mathbf{w}_{<'t'}}(\cdot) = \deltaDirac{\EmbLayer(\mathbf{w}_{<'t'})} \).</li>
+                    <li>\( \KernelBB: \ContextRepSpaceMeas \to \RepSpaceMeas \) is the (deterministic) Backbone kernel (e.g., Transformer layers with RoPE), processing \( E_{<'t'} \) to produce the final hidden state \( h_t \in \RepSpace \cong \RR^{d_{model}} \). \( (\KernelBB)_{E_{<'t'}}(\cdot) = \deltaDirac{\Backbone(E_{<'t'})} \).</li>
+                    <li>\( \KernelLMHead: \RepSpaceMeas \to \VocabSpaceMeas \) is the (stochastic) LM Head kernel, mapping \( h_t \) to the output probability distribution over the vocabulary \( \VV \) via a linear layer and softmax: \( \KernelLMHead(h, \{w\}) = [\softmax(\LMHead(h))]_w \).</li>
+                </ul>
+            </p>
+            <p>
+                This compositional structure allows us to precisely track the transformation of information from context to prediction within a unified probabilistic framework. \( \cat{Stoch} \) is equipped with operations for copying (\( \copyop_X: X \to X \tens X \)) and discarding (\( \delop_X: X \to \unit \)) information, forming a rich algebraic structure for reasoning about probabilistic systems.
+            </p>
+        </div>
+    </div>
+  </section>
+
+  <section class="section content-section" id="divergence-info">
+    <div class="container">
+        <h2 class="title is-3 has-text-centered">Divergence Enrichment and Information Measures</h2>
+        <h3 class="subtitle is-4 has-text-centered">Quantifying Stochasticity and Dependence</h3>
+        <div class="content">
+            <p>
+                The power of the MC framework is enhanced by enriching \( \cat{Stoch} \) with a <strong>statistical divergence</strong> \( D: \Prob(X) \times \Prob(X) \to [0, \infty] \), such as Kullback-Leibler (\( \KLDiv \)), Total Variation (\( \TVDist \)), Rényi (\( \RenyiDiv{\alpha} \)), or general \( f \)-divergences (\( \FD \)). Divergences quantify the dissimilarity between probability distributions.
+            </p>
+            <p>
+                A crucial property is the <strong>Data Processing Inequality (DPI)</strong>: for any kernel \( k: X \to Y \) and probability measures (states) \( p, q \) on \( X \),
+                \[ D_Y(k \comp p \| k \comp q) \le D_X(p \| q) \]
+                Processing data through a channel \( k \) cannot increase the distinguishability between input distributions.
+            </p>
+            <p>
+                Based on a divergence \( D \) satisfying the DPI, Perrone defined intrinsic Categorical information measures:
+                <ul>
+                    <li><strong>Categorical Entropy</strong> of a kernel \( k: X \to Y \), measuring its intrinsic stochasticity:
+                    \[ \CategoricalEntropy_D(k) \defeq D_{Y \tens Y} \left( \copyop_Y \comp k \quad \| \quad (k \tens k) \comp \copyop_X \right) \]
+                    This compares copying the output \( y \) (state \( \deltaDirac{(y,y)} \)) with generating two independent outputs \( (y_1, y_2) \) from the same input \( x \). It is zero if \( k \) is deterministic.
+                    </li>
+                    <li><strong>Categorical Mutual Information</strong> of a joint state \( p: \unit \to X \tens Y \), measuring statistical dependence:
+                    \[ \Info_D(p) \defeq D_{X \tens Y} \left( p \quad \| \quad p_X \tens p_Y \right) \]
+                    where \( p_X \) and \( p_Y \) are the marginal states. This measures how far the joint state \( p \) is from the product of its marginals (independence). When \( D = \KLDiv \), this recovers Shannon Mutual Information.
+                    </li>
+                </ul>
+                These definitions automatically inherit the DPI, e.g., for a Markov chain \( X \to Y \to Z \), \( \Info_D(X; Y) \ge \Info_D(X; Z) \).
+            </p>
+        </div>
+    </div>
+  </section>
+
+  <section class="section content-section" id="metrics">
+    <div class="container">
+        <h2 class="title is-3 has-text-centered">Proposed Analytical Metrics</h2>
+        <h3 class="subtitle is-4 has-text-centered">Probing Information Flow in AR Models</h3>
+        <div class="content">
+            <p>Using the \( (\cat{Stoch}, D) \) framework, we define metrics to analyze the AR generation step \( k_{\mathrm{gen}, \theta} \):</p>
+            <ol>
+                <li>
+                    <strong>Representation Divergence:</strong> Quantifies how well the hidden state \( H_t \) distinguishes context properties \( S \). Given conditional hidden state distributions \( p_{H_t|s} = (\KernelBB \comp \KernelEmb) \comp p_{W_{<'t'}|s} \), we measure:
+                    \[ \text{RepDiv}_D(s_1 \| s_2) \defeq D_{\RepSpace}(p_{H_t|s_1} \| p_{H_t|s_2}) \]
+                    High divergence implies \( H_t \) effectively encodes property \( S \). Estimation is challenging in high-dimensional \( \RepSpace \).
+                </li>
+                <li>
+                    <strong>Categorical Mutual Information:</strong> Measures statistical dependencies:
+                    <ul>
+                        <li><em>State-Prediction (\( H_t; W_t \)):</em> How much information \( H_t \) carries about the next token \( W_t \). Calculated from the joint state \( p_{H_t, W_t} = (\id_{\RepSpace} \tens \KernelLMHead) \comp \copyop_{\RepSpace} \comp p_{H_t} \):
+                         \[ \Info_D(H_t ; W_t) \defeq \Info_D(p_{H_t, W_t}) \]
+                        </li>
+                        <li><em>Temporal State (\( H_t; H_{t+1} \)):</em> Coherence between consecutive hidden states, indicating information propagation. Calculated from \( p_{H_t, H_{t+1}} \) using a step kernel \( k_{\text{step}}: H_t \to H_{t+1} \):
+                         \[ \Info_D(H_t ; H_{t+1}) \defeq \Info_D(p_{H_t, H_{t+1}}) \]
+                        </li>
+                    </ul>
+                    Estimation involves high-dimensional MI estimators.
+                </li>
+                <li>
+                    <strong>LM Head Categorical Entropy:</strong> Assesses the intrinsic uncertainty of the final prediction kernel \( \KernelLMHead \):
+                     \[ \CategoricalEntropy_D(\KernelLMHead) = D_{\VV \tens \VV} \left( \copyop_\VV \comp \KernelLMHead \quad \| \quad (\KernelLMHead \tens \KernelLMHead) \comp \copyop_\RepSpace \right) \]
+                    High entropy implies high uncertainty in \( W_t \) even given \( H_t \). Can be related to average conditional Shannon entropy \( \Expect_{h \sim p_{H_t}} [\ShannonEntropy(\KernelLMHead(h, \cdot))] \). Easier to estimate as output space \( \VV \) is finite.
+                </li>
+                <li>
+                    <strong>Information Flow Bounds (DPI):</strong> Establishes limits on information transfer. For a context property \( S \), the Markov chain \( S \to H_t \to W_t \) and the DPI yield:
+                     \[ \Info_D(S ; H_t) \ge \Info_D(S ; W_t) \]
+                    Information about \( S \) in the prediction \( W_t \) cannot exceed that in the representation \( H_t \). The gap quantifies information present in \( H_t \) but not used for the immediate prediction.
+                </li>
+            </ol>
+             <p> These metrics provide principled ways to quantify information compression, representation quality, and predictive uncertainty within AR models.</p>
+        </div>
+    </div>
+  </section>
+
+  <section class="section content-section" id="infogeo">
+    <div class="container">
+        <h2 class="title is-3 has-text-centered">Information Geometry Perspective</h2>
+        <h3 class="subtitle is-4 has-text-centered">The Geometry of Prediction and Representation</h3>
+        <div class="content">
+            <p>
+                The framework connects naturally to Information Geometry. The space of next-token distributions \( \Prob(\VV) \) is a simplex with the Fisher-Rao information metric \( g^{\text{FR}} \), measuring local distinguishability of distributions.
+            </p>
+            <p>
+                The LM Head map \( g_{\text{head}}: \RepSpace \to \Prob(\VV) \), where \( p_h = g_{\text{head}}(h) = \KernelLMHead(h, \cdot) \), allows pulling back the Fisher-Rao metric onto the representation space \( \RepSpace \) via \( g^* = g_{\text{head}}^* g^{\text{FR}} \):
+                \[
+                g^*_{ab}(h) = \sum_{i,j} g^{\text{FR}}_{ij}(p_h) \frac{\partial (p_h)_i}{\partial h_a} \frac{\partial (p_h)_j}{\partial h_b}
+                \]
+                where \( (p_h)_i \) are coordinates of the distribution \( p_h \) and \( h_a, h_b \) are coordinates of \( h \in \RepSpace \).
+            </p>
+            <p>
+                This pullback metric \( g^*(h) \) on \( \RepSpace \):
+                <ul>
+                    <li>Measures the sensitivity of the output distribution \( p_h \) to changes in the representation \( h \).</li>
+                    <li>Is highly degenerate (rank at most \( |\VV|-1 \)) since \( d_{model} \gg |\VV| \). Its null space corresponds to representational changes irrelevant to the next-token prediction.</li>
+                    <li>Its spectrum reveals principal directions of predictive sensitivity in \( \RepSpace \).</li>
+                </ul>
+                 Analyzing \( (\RepSpace, g^*) \) provides insights into the functional geometry learned by the model.
+            </p>
+        </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="container">
-      <div class="has-text-centered">
-        <p>© 2025. All rights reserved.</p>
+      <div class="content has-text-centered">
+        <p>
+          Yifan Zhang &copy; 2025. All rights reserved.
+        </p>
       </div>
     </div>
   </footer>
+
 </body>
 </html>

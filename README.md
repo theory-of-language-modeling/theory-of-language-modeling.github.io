@@ -1,4 +1,4 @@
-# Academic Project Page Template
+# Theory of Language Modeling 
 This is an academic paper project page template.
 
 

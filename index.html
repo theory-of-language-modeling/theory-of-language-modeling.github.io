@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Language, Thought</title>
+  <title>Theory of Language Modeling</title>
 
   <meta name="description" content="Exploring Theory of Language Modeling.">
   <meta property="og:title" content="Theory of Language Modeling"/>
@@ -105,11 +105,11 @@
   </script>
   <style>
     :root {
-      --ucla-blue: #2774AE;      /* UCLA Blue */
-      --ucla-gold: #FFD100;      /* UCLA Gold */
-      --light-bg: #F8F9FA;       /* Slightly softer light background */
+      --ucla-blue: #2774AE;     /* UCLA Blue */
+      --ucla-gold: #FFD100;     /* UCLA Gold */
+      --light-bg: #F8F9FA;      /* Slightly softer light background */
       --text-light: #FFFFFF;
-      --text-dark: #363636;       /* Default Bulma dark text */
+      --text-dark: #363636;      /* Default Bulma dark text */
       --shadow-color: rgba(0, 0, 0, 0.2);
       --section-bg-light: #ffffff; /* White background for content sections */
     }
@@ -238,6 +238,26 @@
         max-width: 100%; /* Prevent SVG overflow */
      }
 
+    /* Style for PDF Viewer Section */
+    #pdf-viewer-section {
+      padding-top: 2rem; /* Less padding than content sections */
+      padding-bottom: 4rem;
+      background-color: var(--light-bg); /* Match body background */
+    }
+
+    #pdf-viewer-container {
+        max-width: 900px; /* Max width for the viewer */
+        margin: 0 auto; /* Center */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ccc; /* Subtle border */
+    }
+
+    #pdf-viewer-container iframe {
+        display: block; /* Remove extra space below iframe */
+        border: none;
+    }
+
+
     .footer {
       background: var(--ucla-blue);
       color: var(--text-light);
@@ -267,28 +287,34 @@
       .mission {
           max-width: 90%;
       }
+      #pdf-viewer-container {
+          max-width: 95%;
+      }
     }
 
     @media (max-width: 768px) { /* Phone breakpoint */
-          .sonnet {
-              max-width: 95%;
-          }
-          .mission {
-            font-size: 1.1rem;
-          }
-          .section.content-section {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-          }
-          .content-section .title.is-3 {
-            font-size: 1.75rem; /* Adjust title size */
-          }
-          .content-section .subtitle.is-4 {
-            font-size: 1.1rem;
-          }
-          .content-section .content {
-            max-width: 95%;
-          }
+         .sonnet {
+             max-width: 95%;
+         }
+         .mission {
+           font-size: 1.1rem;
+         }
+         .section.content-section {
+           padding-top: 3rem;
+           padding-bottom: 3rem;
+         }
+         .content-section .title.is-3 {
+           font-size: 1.75rem; /* Adjust title size */
+         }
+         .content-section .subtitle.is-4 {
+           font-size: 1.1rem;
+         }
+         .content-section .content {
+           max-width: 95%;
+         }
+         #pdf-viewer-container iframe {
+            height: 600px; /* Adjust height for smaller screens */
+         }
     }
 
   </style>
@@ -301,38 +327,43 @@
         <h1 class="title">Theory of Language Modeling</h1>
 
         <div class="sonnet">
-          <p>The tongue gives voice, the mind begins to shape,</p>
-          <p>What unseen bridge connects these realms so near?</p>
-          <p>From inner spark to uttered verbal scape,</p>
-          <p>Through patterns spun before the words appear.</p>
+          <p>Words in sequence, born of reasoned thought,</p>
+          <p>How next unfolds from patterns deeply sought?</p>
+          <p>A subtle flow, from mind to verbal sign,</p>
+          <p>Reflecting structures, ordered and defined.</p>
 
-          <p>We strive to know how concepts first ignite</p>
-          <p>And find their form in language's design;</p>
-          <p>What hidden structures grant a thought its might?</p>
-          <p>What grammar deep does human sense define?</p>
+          <p>What hidden forms give meaning sturdy frame?</p>
+          <p>How symbol streams convey a truth profound?</p>
+          <p>We trace the links, give core ideas a name,</p>
+          <p>On logic's thread, coherent phrases found.</p>
 
-          <p>This subtle dance lets understanding bloom,</p>
-          <p>As mind constructs the world it comes to hold.</p>
-          <p>Through chosen words we banish mental gloom,</p>
-          <p>Or weave the very narratives we're told.</p>
+          <p>We map the paths that likely thoughts pursue,</p>
+          <p>Predicting threads from context we acquire,</p>
+          <p>Through formal means, bring understanding new,</p>
+          <p>And shape the flow to match the mind's desire.</p>
 
-          <p>This mystery invites the keen pursuit:</p>
-          <p>To map the space where word and reason root.</p>
+          <p>This grand design invites the keen pursuit:</p>
+          <p>To grasp the rules where future phrases root.</p>
 
-          <p class="sonnet-attribution">-  Theory of Language Modeling </p>
+          <p class="sonnet-attribution">- Theory of Language Modeling </p>
         </div>
-
         <div class="mission">
           Our research investigates the Theory of Language Modeling.
         </div>
 
-      </div>
+        <div class="mt-5"> <a href="https://theory-of-language-modeling.github.io/Theory_of_Language_Modeling_Part_I.pdf"
+               class="button is-primary is-large"
+               target="_blank" rel="noopener noreferrer">
+               Read Part I (PDF)
+            </a>
+        </div>
+        </div>
     </div>
   </section>
 
   <section class="section content-section" id="mc-framework">
     <div class="container">
-        <h2 class="title is-3 has-text-centered">A Markov Categorical Framework for Language Modeling</h2>
+        <h2 class="title is-3 has-text-centered">Theory of Language Modeling Part I: A Markov Categorical Framework for Language Modeling</h2>
         <h3 class="subtitle is-4 has-text-centered">Modeling AR Generation as Composed Kernels</h3>
         <div class="content">
             <p>
@@ -343,9 +374,9 @@
             </p>
             <p>
                 The AR generation process is modeled as a composition of kernels in \( \cat{Stoch} \):
-               \[
-                 k_{\mathrm{gen}, \theta} = \KernelLMHead \comp \KernelBB \comp \KernelEmb : \ContextSeqSpaceMeas \to \VocabSpaceMeas
-               \]
+                \[
+                  k_{\mathrm{gen}, \theta} = \KernelLMHead \comp \KernelBB \comp \KernelEmb : \ContextSeqSpaceMeas \to \VocabSpaceMeas
+                \]
                 Where:
                 <ul>
                     <li>\( \KernelEmb: \ContextSeqSpaceMeas \to \ContextRepSpaceMeas \) is the (deterministic) Embedding Layer kernel, mapping the token sequence \( \mathbf{w}_{<'t'} \in \VV^* \) to an initial representation sequence \( E_{<'t'} \), possibly including positional encodings. \( (\KernelEmb)_{\mathbf{w}_{<'t'}}(\cdot) = \deltaDirac{\EmbLayer(\mathbf{w}_{<'t'})} \).</li>
@@ -360,6 +391,22 @@
     </div>
   </section>
 
+  <section class="section" id="pdf-viewer-section">
+      <div class="container">
+           <h2 class="title is-3 has-text-centered" style="color: var(--ucla-blue); margin-bottom: 2rem;">Embedded PDF: Part I</h2>
+           <div id="pdf-viewer-container">
+               <iframe src="https://theory-of-language-modeling.github.io/Theory_of_Language_Modeling_Part_I.pdf"
+                       width="100%"
+                       height="800px"
+                       title="Embedded PDF Viewer for Theory of Language Modeling Part I">
+                   <p>Your browser does not support embedded PDFs. Please use the button above to download the PDF.</p>
+               </iframe>
+           </div>
+           <p class="has-text-centered is-size-7 mt-3" style="color: var(--text-dark); opacity: 0.7;">
+               Note: PDF embedding might depend on browser settings and the PDF hosting server. Use the button link if the viewer doesn't load.
+           </p>
+      </div>
+  </section>
   <section class="section content-section" id="divergence-info">
     <div class="container">
         <h2 class="title is-3 has-text-centered">Divergence Enrichment and Information Measures</h2>
@@ -377,12 +424,12 @@
                 Based on a divergence \( D \) satisfying the DPI, Perrone defined intrinsic Categorical information measures:
                 <ul>
                     <li><strong>Categorical Entropy</strong> of a kernel \( k: X \to Y \), measuring its intrinsic stochasticity:
-                    \[ \CategoricalEntropy_D(k) \defeq D_{Y \tens Y} \left( \copyop_Y \comp k \quad \| \quad (k \tens k) \comp \copyop_X \right) \]
-                    This compares copying the output \( y \) (state \( \deltaDirac{(y,y)} \)) with generating two independent outputs \( (y_1, y_2) \) from the same input \( x \). It is zero if \( k \) is deterministic.
+                      \[ \CategoricalEntropy_D(k) \defeq D_{Y \tens Y} \left( \copyop_Y \comp k \quad \| \quad (k \tens k) \comp \copyop_X \right) \]
+                      This compares copying the output \( y \) (state \( \deltaDirac{(y,y)} \)) with generating two independent outputs \( (y_1, y_2) \) from the same input \( x \). It is zero if \( k \) is deterministic.
                     </li>
                     <li><strong>Categorical Mutual Information</strong> of a joint state \( p: \unit \to X \tens Y \), measuring statistical dependence:
-                    \[ \Info_D(p) \defeq D_{X \tens Y} \left( p \quad \| \quad p_X \tens p_Y \right) \]
-                    where \( p_X \) and \( p_Y \) are the marginal states. This measures how far the joint state \( p \) is from the product of its marginals (independence). When \( D = \KLDiv \), this recovers Shannon Mutual Information.
+                      \[ \Info_D(p) \defeq D_{X \tens Y} \left( p \quad \| \quad p_X \tens p_Y \right) \]
+                      where \( p_X \) and \( p_Y \) are the marginal states. This measures how far the joint state \( p \) is from the product of its marginals (independence). When \( D = \KLDiv \), this recovers Shannon Mutual Information.
                     </li>
                 </ul>
                 These definitions automatically inherit the DPI, e.g., for a Markov chain \( X \to Y \to Z \), \( \Info_D(X; Y) \ge \Info_D(X; Z) \).
@@ -400,29 +447,29 @@
             <ol>
                 <li>
                     <strong>Representation Divergence:</strong> Quantifies how well the hidden state \( H_t \) distinguishes context properties \( S \). Given conditional hidden state distributions \( p_{H_t|s} = (\KernelBB \comp \KernelEmb) \comp p_{W_{<'t'}|s} \), we measure:
-                    \[ \text{RepDiv}_D(s_1 \| s_2) \defeq D_{\RepSpace}(p_{H_t|s_1} \| p_{H_t|s_2}) \]
+                      \[ \text{RepDiv}_D(s_1 \| s_2) \defeq D_{\RepSpace}(p_{H_t|s_1} \| p_{H_t|s_2}) \]
                     High divergence implies \( H_t \) effectively encodes property \( S \). Estimation is challenging in high-dimensional \( \RepSpace \).
                 </li>
                 <li>
                     <strong>Categorical Mutual Information:</strong> Measures statistical dependencies:
                     <ul>
                         <li><em>State-Prediction (\( H_t; W_t \)):</em> How much information \( H_t \) carries about the next token \( W_t \). Calculated from the joint state \( p_{H_t, W_t} = (\id_{\RepSpace} \tens \KernelLMHead) \comp \copyop_{\RepSpace} \comp p_{H_t} \):
-                         \[ \Info_D(H_t ; W_t) \defeq \Info_D(p_{H_t, W_t}) \]
+                          \[ \Info_D(H_t ; W_t) \defeq \Info_D(p_{H_t, W_t}) \]
                         </li>
                         <li><em>Temporal State (\( H_t; H_{t+1} \)):</em> Coherence between consecutive hidden states, indicating information propagation. Calculated from \( p_{H_t, H_{t+1}} \) using a step kernel \( k_{\text{step}}: H_t \to H_{t+1} \):
-                         \[ \Info_D(H_t ; H_{t+1}) \defeq \Info_D(p_{H_t, H_{t+1}}) \]
+                          \[ \Info_D(H_t ; H_{t+1}) \defeq \Info_D(p_{H_t, H_{t+1}}) \]
                         </li>
                     </ul>
                     Estimation involves high-dimensional MI estimators.
                 </li>
                 <li>
                     <strong>LM Head Categorical Entropy:</strong> Assesses the intrinsic uncertainty of the final prediction kernel \( \KernelLMHead \):
-                     \[ \CategoricalEntropy_D(\KernelLMHead) = D_{\VV \tens \VV} \left( \copyop_\VV \comp \KernelLMHead \quad \| \quad (\KernelLMHead \tens \KernelLMHead) \comp \copyop_\RepSpace \right) \]
+                      \[ \CategoricalEntropy_D(\KernelLMHead) = D_{\VV \tens \VV} \left( \copyop_\VV \comp \KernelLMHead \quad \| \quad (\KernelLMHead \tens \KernelLMHead) \comp \copyop_\RepSpace \right) \]
                     High entropy implies high uncertainty in \( W_t \) even given \( H_t \). Can be related to average conditional Shannon entropy \( \Expect_{h \sim p_{H_t}} [\ShannonEntropy(\KernelLMHead(h, \cdot))] \). Easier to estimate as output space \( \VV \) is finite.
                 </li>
                 <li>
                     <strong>Information Flow Bounds (DPI):</strong> Establishes limits on information transfer. For a context property \( S \), the Markov chain \( S \to H_t \to W_t \) and the DPI yield:
-                     \[ \Info_D(S ; H_t) \ge \Info_D(S ; W_t) \]
+                      \[ \Info_D(S ; H_t) \ge \Info_D(S ; W_t) \]
                     Information about \( S \) in the prediction \( W_t \) cannot exceed that in the representation \( H_t \). The gap quantifies information present in \( H_t \) but not used for the immediate prediction.
                 </li>
             </ol>
@@ -442,7 +489,7 @@
             <p>
                 The LM Head map \( g_{\text{head}}: \RepSpace \to \Prob(\VV) \), where \( p_h = g_{\text{head}}(h) = \KernelLMHead(h, \cdot) \), allows pulling back the Fisher-Rao metric onto the representation space \( \RepSpace \) via \( g^* = g_{\text{head}}^* g^{\text{FR}} \):
                 \[
-                g^*_{ab}(h) = \sum_{i,j} g^{\text{FR}}_{ij}(p_h) \frac{\partial (p_h)_i}{\partial h_a} \frac{\partial (p_h)_j}{\partial h_b}
+                  g^*_{ab}(h) = \sum_{i,j} g^{\text{FR}}_{ij}(p_h) \frac{\partial (p_h)_i}{\partial h_a} \frac{\partial (p_h)_j}{\partial h_b}
                 \]
                 where \( (p_h)_i \) are coordinates of the distribution \( p_h \) and \( h_a, h_b \) are coordinates of \( h \in \RepSpace \).
             </p>
@@ -471,3 +518,4 @@
 
 </body>
 </html>
+                      

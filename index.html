@@ -479,34 +479,6 @@
     </div>
   </section>
 
-  <section class="section content-section" id="infogeo">
-    <div class="container">
-        <h2 class="title is-3 has-text-centered">Information Geometry Perspective</h2>
-        <h3 class="subtitle is-4 has-text-centered">The Geometry of Prediction and Representation</h3>
-        <div class="content">
-            <p>
-                The framework connects naturally to Information Geometry. The space of next-token distributions \( \Prob(\VV) \) is a simplex with the Fisher-Rao information metric \( g^{\text{FR}} \), measuring local distinguishability of distributions.
-            </p>
-            <p>
-                The LM Head map \( g_{\text{head}}: \RepSpace \to \Prob(\VV) \), where \( p_h = g_{\text{head}}(h) = \KernelLMHead(h, \cdot) \), allows pulling back the Fisher-Rao metric onto the representation space \( \RepSpace \) via \( g^* = g_{\text{head}}^* g^{\text{FR}} \):
-                \[
-                  g^*_{ab}(h) = \sum_{i,j} g^{\text{FR}}_{ij}(p_h) \frac{\partial (p_h)_i}{\partial h_a} \frac{\partial (p_h)_j}{\partial h_b}
-                \]
-                where \( (p_h)_i \) are coordinates of the distribution \( p_h \) and \( h_a, h_b \) are coordinates of \( h \in \RepSpace \).
-            </p>
-            <p>
-                This pullback metric \( g^*(h) \) on \( \RepSpace \):
-                <ul>
-                    <li>Measures the sensitivity of the output distribution \( p_h \) to changes in the representation \( h \).</li>
-                    <li>Is highly degenerate (rank at most \( |\VV|-1 \)) since \( d_{model} \gg |\VV| \). Its null space corresponds to representational changes irrelevant to the next-token prediction.</li>
-                    <li>Its spectrum reveals principal directions of predictive sensitivity in \( \RepSpace \).</li>
-                </ul>
-                 Analyzing \( (\RepSpace, g^*) \) provides insights into the functional geometry learned by the model.
-            </p>
-        </div>
-    </div>
-  </section>
-
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
